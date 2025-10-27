@@ -4,6 +4,7 @@ import {getScores} from "@/util/submit";
 import {useEffect, useState} from "react";
 import QRCode from 'react-qr-code'
 import dynamic from "next/dynamic";
+import {PlotData} from "plotly.js";
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
 
 const ORDER = ["Context", "Individuality", "Time Orientation", "Power Distance", "Communication Style"]
@@ -25,7 +26,7 @@ export default function Home() {
               </div>
               <div className="flex-col rounded-2xl pt-3 pb-5 px-4 bg-white items-center gap-6 text-center sm:items-start sm:text-left">
                   <Plot data={ORDER.map((name, i) => {
-                      return { name, x: data.map(scores => scores[i]+1), type: 'box' };}).reverse()}
+                      return { name, x: data.map(scores => scores[i]+1), type: 'box' } as PlotData;}).reverse()}
                         layout={{
                             title: {
                                 text: 'Cultural Dimensions Statistics',
