@@ -22,7 +22,7 @@ export default function Home() {
           <p className="flex py-8 text-xl mt-5 text-black">The&nbsp;<b>Data</b>&nbsp;(live)</p>
           <main className="flex mb-20 flex-col w-full items-center gap-10">
               <div className="absolute left-20 top-10 flex-col w-fit flex rounded-2xl p-3 bg-white items-center text-center sm:items-start sm:text-left">
-                  <QRCode size={100} value='https://teaching-teams.vercel.app/survey' />
+                  <QRCode size={200} value='https://teaching-teams.vercel.app/survey' />
               </div>
               <div className="flex-col rounded-2xl pt-3 pb-5 px-4 bg-white items-center gap-6 text-center sm:items-start sm:text-left">
                   <Plot data={ORDER.map((name, i) => {
